@@ -633,6 +633,7 @@ background-color: #a26106c7;
   text-decoration: none;
 }
 .slider{
+  display:flex;
   height:200px;
   margin-bottom:10px;
   /*background-color:#fff;*/
