@@ -657,6 +657,7 @@ background-color: #a26106c7;
 }
 #apl{
   /*box-shadow:1px 1px 2px gray;*/
+  list-style-type: none;
   background-color:;
   width:1900px;
   height:100%;
