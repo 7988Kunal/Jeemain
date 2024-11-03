@@ -156,8 +156,9 @@ font-weight:light;
   display:flex;
   width:100%;
   font-size:16px;
-  align-content: center;
-  align-items: center;
+  justify-items:center;
+  align-content:center;
+  align-items:center;
 }
 #d2 marquee a{
   font-size: 14px;
