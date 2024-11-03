@@ -642,7 +642,7 @@ background-color: #a26106c7;
 .slider marquee{
   height: 100%;
   width:100%;
-  display:flex;
+  /*display:flex;
   flex-direction:row;
   align-content: center;
   /*background-color:blue;*/
