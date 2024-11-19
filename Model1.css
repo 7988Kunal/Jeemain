@@ -637,7 +637,7 @@ background-color: #a26106c7;
   height:200px;
   margin-bottom:10px;
  /* background:linear-gradient(rgb(213,233,211),rgb(193,215,212),rgb(222,214,209));*/
-  box-shadow:1px 1px 8px gray;
+  /*box-shadow:1px 1px 8px gray;*/
 }
 .slider marquee{
   height: 100%;
