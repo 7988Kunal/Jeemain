@@ -69,7 +69,7 @@ const valiDate=()=>{
     setErrorMsg(appl,'application number must contains 12 digits number only');
   }else if(applVal[0]!=="2"){
     setErrorMsg(appl,'Invalid first digit in application no.');
-  }else if(applVal[1]!=="4"){
+  }else if(applVal[1]!=="5"){
     setErrorMsg(appl,'Invalid second digit in application no.');
   }
    else{
