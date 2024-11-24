@@ -1,0 +1,71 @@
+.pot{
+  width:280px;
+  margin-top:15px;
+  margin-left:14px;
+}
+
+.pot.success #email{
+  border-color: green;
+}
+.pot.error #email{
+  border-color: red;
+}
+.pot.success #email:hover{
+  box-shadow:1px 1px 5px 1px green ;
+  border:1px solid  green;
+}
+.pot.error #email:hover{
+  box-shadow:1px 1px 5px 1px red  ;
+  border:1px solid red ;
+}
+.pot.success #appl{
+  border-color: green;
+}
+.pot.error #appl{
+  border-color: red;
+}
+.pot.success input{
+  border-color: green;
+}
+.pot.success #appl:hover{
+  box-shadow:1px 1px 5px 1px green ;
+  border:1px solid  green;
+}
+.pot.error input{
+  border-color: red;
+}
+.pot.error #appl:hover{
+  box-shadow:1px 1px 5px 1px red  ;
+  border:1px solid red ;
+}
+.pot i{
+ visibility: hidden;
+}
+.pot small{
+ /* color: rgb(171,35,0);*/
+ color: red;
+ visibility:hidden;
+}
+.pot.error small{
+  visibility: visible;
+}
+.pot.success i.fa-check-circle{
+ /* color: rgb(16,80,22);*/
+ color: green;
+  visibility:visible;
+}
+.pot.error i.fa-exclamation-circle{
+ /* color: rgb(171,35,0);*/
+  color: red;
+  visibility:visible;
+}
+.plugin{
+  z-index:2;
+  position: relative;
+  bottom:25px;
+  margin:7%;
+  height:670px;
+  background-color: #e6e1e11c;
+  border-radius:10px;
+  box-shadow:2px 2px 4px 2px #9ec9fb6d;
+}
