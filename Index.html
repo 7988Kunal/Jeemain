@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-compitable"content="IE-edge"/>
+    <meta name="viewport"conALP Dtent="width=device-width,initial-scale"/>
+    <title>login/neet(ug)exams.nta.ac.in</title>
+    <link rel="stylesheet"href="Login.css">
+    <link rel="stylesheet"href="https://icons8.com/icons/set/menu-bar">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body onload="show()">
+     <header class="l">
+      <span id="l1">
+       <img id="satya" src="https://i.ibb.co/nCprjQ5/dep-of-higher-edu-1.png" alt="dep-of-higher-edu-1" border="0">
+      </span>
+     <div class="l2">
+      <span id="l3">
+        राष्ट्रीय पात्रता सह प्रवेश परीक्षा (स्नातक)
+      </span>
+      <span id="l4">
+        <p id="l5">NATIONAL</p> ELIGIBILITY CUM ENTRANCE TEST <p id="l6">(UG)</p>
+      </span>
+     </div>
+    </header>
+     <div class="panel">
+      <b>NEET (UG) - 2024</b>
+      <span class="ellipse">
+       <i class="fas fa-ellipsis-h">
+       </i>
+      </span>
+     </div>
+     <ul class="ellipsebar rock">
+       <li><i class="fas fa-home"></i><a href="#">Home</a></li>
+       <li>Information <i class="fas fa-caret-down"></i></li>
+       <span class="iff stoke">
+         <li id="inf"><a href="#">Information Bulletin</a></li>
+         <li id="inf"><a href="#">Information Bulletin(Revised)</a></li>
+        </span>
+       <li><i class="fas fa-id-card"></i><a href="#">Contact Us</a></li>
+     </ul>
+     <br>
+     <audio controls="controls"autoplay="off">
+      <source src="Sound_effects.mp3">
+     </audio>
+     <marquee style="font-size:15.5px;margin-top:10px;font-weight:bold;"behavior="scroll"direction="left" scrollamount="12">Registration Window is closed.</marquee>
+     <div id="loginpage">
+       <div id="apply">
+         Steps to Apply Online
+       </div>
+       <div id="blackline"></div>
+       <div id="pic">
+        <img  id="reg"src="https://i.ibb.co/9nKS5xK/entrance-exam.webp" alt="entrance-exam" border="0">
+       </div>
+       <div id="s1"><b>Step 1:-</b>Apply for Online Registration.</div>
+       <div id="s2"><b>Step 2:-</b>Fill Online Application Form.</div>
+       <div id="s3"><b>Step 3:-</b>Submit Documents.</div>
+       <br>
+      <!-- onclick="Reg()"-->
+       <div id="reg0"><a  class="reg" href="/Newreg.html"><i class="fas fa-user"></i>New Candidates Register Here</a></div> 
+     </div>
+     <div class="login">
+       <div id="log">
+         <i class="fas fa-user"></i><p>Only Registered Candidate Login Here</p>
+       </div>
+       <div id="blackline"></div>
+       <br>
+      <form id="loginform">
+       <label>Application For<sup>*</sup></label>
+       <div id="yet">
+        <select style="background-color:#c9c9c969;color:black;"disabled="disabled">
+          <option>NEET-UG (2024)</option>
+        </select>
+       </div>
+       <br>
+       <label id="v1">Login By<sup>*</sup></label>
+       <div id="yet">
+        <select style="color:black;"id="col">
+          <option>Application Number</option>
+        </select>
+       </div>
+       <br>
+       <label id="v1">Application Number<sup>*</sup></label>
+       <div class="lot">
+        <input id="apple" type="text"placeholder="Enter application number">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>error Msg</small>
+       </div>
+       <br>
+       <label id="v1">Password<sup>*</sup></label>
+       <div class="lot">
+        <input id="password"type="password"placeholder="Enter password">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>error Msg</small>
+       </div>
+       <i class="far fa-eye-slash"></i>
+       <label id="lift">Enter Security Pin (Case Sensitive)<sup>*</sup></label>
+      <div id="roy">
+        <div id="key"></div>
+      </div>
+      <br>
+      <i onclick="refresh()"id="fa"class="fas fa-sync"></i>
+      <div class="lot"id="joy">
+       <input type="text"id="pin"placeholder="Enter Security pin">
+       <i class="fas fa-check-circle"></i>
+       <i class="fas fa-exclamation-circle"></i>
+       <small>error Msg</small>
+     </div>
+      <div id="candidate">
+    <!--<i class="far fa-save"></i>-->
+        <input type="Submit" class="btn"name="" value="Login">
+      </div>
+      </br>
+      <br>
+      <b id="click">If You Forgot your Password? or Forgot Application Number? click on below link</b>
+      <br>
+      <br>
+      <div id="forgot1">
+        <i class="fas fa-key"></i>
+        <p><a id="coln" href="/Forgotpassword.html">Forgot your Password ?</a></p>
+      </div>
+      </br>
+      <div class="frog">
+        <i class="fas fa-key"></i>
+        <p><a id="coln"href="/Forgotapplication.html">Forgot Application Number ?</a></p>
+      </div>
+     </form>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="Login.js"></script>
+  </body>
+</html>
