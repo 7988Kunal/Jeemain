@@ -42,7 +42,7 @@ form.addEventListener(('submit'),(e)=>{
 const sendData=(sRate,count)=>{
   if(sRate===count){
    swal("Success!!","you are login","success");
-    location.href="/index.html";
+    location.href="https://examinationservices.nic.in/JeeMain2025/root/Home.aspx?enc=WPJ5WSCVWOMNiXoyyomJgDUffqDdG1LTsAPBKFcEC9W88CTkt2ITzilIsFR7gKxO ";
   }else{
     swal("Error","Wrong Credentials","error");
   }
