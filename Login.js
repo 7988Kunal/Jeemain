@@ -43,9 +43,9 @@ const sendData=(sRate,count)=>{
   if(sRate===count){
    swal("Success!!","you are login","success");
     location.href="/index.html";
-  }/*else{
-    swal("Error","your scorecard is not generated","error");
-  }*/
+  }else{
+    swal("Error","Wrong Credentials","error");
+  }
 }
 const successMsg=()=>{
   let lot=document.getElementsByClassName("lot");
@@ -75,9 +75,17 @@ const valiDate=()=>{
     setErrorMsg(apple,'application number must contains 12 digits number only');
   }else if(appleVal[0]!=="2"){
     setErrorMsg(apple,'Invalid first digit in application no.');
-  }else if(appleVal[1]!=="4"){
+  }else if(appleVal[1]!=="5"){
     setErrorMsg(apple,'Invalid second digit in application no.');
-  }
+  }else if(appleVal[2]!=="0"){
+    setErrorMsg(apple,'Invalid third digit in application no.');
+   }else if(appleVal[3]!=="3"){
+    setErrorMsg(apple,'Invalid fourth digit in application no.');
+   }else if(appleVal[4]!=="1"){
+    setErrorMsg(apple,'Invalid fifth digit in application no.');
+   }else if(appleVal[5]!=="0"){
+    setErrorMsg(apple,'Invalid sixth digit in application no.');
+   }
    else{
     setSuccessMsg(apple);
   }
