@@ -1,0 +1,70 @@
+.sot{
+  width:280px;
+  margin-top:15px;
+  margin-left:14px;
+}
+.sot.success #email{
+  border-color: green;
+}
+.sot.error #email{
+  border-color: red;
+}
+.sot.success #email:hover{
+  box-shadow:1px 1px 5px 1px green ;
+  border:1px solid  green;
+}
+.sot.error #email:hover{
+  box-shadow:1px 1px 5px 1px red  ;
+  border:1px solid red ;
+}
+.sot.success #name{
+  border-color: green;
+}
+.sot.error #name{
+  border-color: red;
+}
+.sot.success input{
+  border-color: green;
+}
+.sot.success #name:hover{
+  box-shadow:1px 1px 5px 1px green ;
+  border:1px solid  green;
+}
+.sot.error input{
+  border-color: red;
+}
+.sot.error #name:hover{
+  box-shadow:1px 1px 5px 1px red  ;
+  border:1px solid red ;
+}
+.sot i{
+ visibility: hidden;
+}
+.sot small{
+ /* color: rgb(171,35,0);*/
+ color: red;
+ visibility:hidden;
+}
+.sot.error small{
+  visibility: visible;
+}
+.sot.success i.fa-check-circle{
+ /* color: rgb(16,80,22);*/
+ color: green;
+  visibility:visible;
+}
+.sot.error i.fa-exclamation-circle{
+ /* color: rgb(171,35,0);*/
+  color: red;
+  visibility:visible;
+}
+.plugin{
+  z-index:2;
+  position: relative;
+  bottom:25px;
+  margin:7%;
+  height:670px;
+  background-color: #e6e1e11c;
+  border-radius:10px;
+  box-shadow:2px 2px 4px 2px #9ec9fb6d;
+}
