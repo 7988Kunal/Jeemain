@@ -73,7 +73,7 @@ newsevent.addEventListener('click',()=>{
 //  post.style.color='rgba(0,0,0,0.8)';
   post.style.fontSize="14px";
   post.style.textDecoration="none";
-  post.innerHTML='No post to display<!-- <p id="god"><i class="fas fa-caret-right"></i> <a href=" https://online.publuu.com/556954/1251885">Release of Admit Cards to the Candidates for Reconduct of the NEET (UG) - 2024 for 1563 affected Candidates - reg.</a> <b id="new">NEW!</b></p>-->';
+  post.innerHTML='<!--No post to display--> <p id="god"><i class="fas fa-caret-right"></i> <a href="#">Correction window of online application of JEE (Main)-2025 will be live on 26th and 27th November 2024 (till 11:30 p.m.)</a> <b id="new">NEW!</b></p>';
   mainnews.style.overflow="hidden";
   mainnews.style.position="sticky";
 })
