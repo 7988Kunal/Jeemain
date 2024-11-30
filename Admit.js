@@ -67,7 +67,8 @@ marks.addEventListener(('submit'),(e)=>{
 const sendData=(sRate,count)=>{
   if(sRate===count){
   // swal("Success","","success");
-    location.href="/Rank.html";
+    swal("Error","your scorecard is not generated","error");
+    //location.href="/Rank.html";
   }/*else{
     swal("Error","your scorecard is not generated","error");
   }*/
