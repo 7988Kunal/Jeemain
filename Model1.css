@@ -621,11 +621,14 @@ background-color: #a26106c7;
   background-color: #d3d8d3d8;
   list-style-type: none;
   margin-top:20px;
+  margin-left:20px;
+  width:74%;
   height:200px;
   display: flex;
   flex-direction:column;
   justify-content: center;
-  align-items: center;
+  align-items: right;
+  padding-left:20px;
   align-content: center;
   border-radius:2px;
   border:1px solid gray;
@@ -668,7 +671,9 @@ background-color: #a26106c7;
   align-items:center;
   flex-direction:row;
 }
-
+.title-font-normal{
+  margin-left:18px;
+}
 
 
 
