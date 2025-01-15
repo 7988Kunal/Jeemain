@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .otp-inputs {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .otp-inputs input {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .otp-inputs input:focus {
+            border-color: #4CAF50;
+        }
+
+        .message {
+            text-align: center;
+            color: #d9534f;
+        }
+
+        .timer {
+            text-align: center;
+            font-size: 14px;
+            color: #FF6347;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>OTP Verification</h2>
+
+    <!-- Step 1: Enter mobile number -->
+    <div id="phone-number-section">
+        <div class="form-group">
+            <label for="phoneNumber">Enter Mobile Number</label>
+            <input type="text" id="phoneNumber" placeholder="Enter mobile number" maxlength="10">
+        </div>
+        <button class="button" onclick="sendOTP()">Send OTP</button>
+    </div>
+
+    <!-- Step 2: Enter OTP -->
+    <div id="otp-section" style="display: none;">
+        <div class="form-group">
+            <label for="otp">Enter OTP</label>
+            <div class="otp-inputs">
+                <input type="text" class="otp-input" maxlength="1">
+                <input type="text" class="otp-input" maxlength="1">
+                <input type="text" class="otp-input" maxlength="1">
+                <input type="text" class="otp-input" maxlength="1">
+                <input type="text" class="otp-input" maxlength="1">
+                <input type="text" class="otp-input" maxlength="1">
+            </div>
+        </div>
+        <button class="button" onclick="verifyOTP()">Verify OTP</button>
+        <div class="timer" id="timer"></div>
+        <button id="resendButton" class="button" onclick="sendOTP()" style="display: none;">Resend OTP</button>
+    </div>
+
+    <div id="message" class="message"></div>
+</div>
+
+<script>
+    let generatedOTP = '';
+    let timerInterval;
+    let countdown = 120; // 2 minutes in seconds
+
+    function sendOTP() {
+        const phoneNumber = document.getElementById('phoneNumber').value;
+
+        if (phoneNumber.length === 10) {
+            // Simulate OTP generation (replace with backend integration for actual OTP generation)
+            generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+            console.log('Generated OTP:', generatedOTP); // For debugging purposes
+
+            // Simulate sending OTP to the phone number via SMS
+            alert(`OTP sent to ${phoneNumber}: ${generatedOTP}`);
+
+            // Hide phone number section and show OTP input section
+            document.getElementById('phone-number-section').style.display = 'none';
+            document.getElementById('otp-section').style.display = 'block';
+
+            // Start countdown timer for Resend OTP
+            startCountdown();
+
+            // Hide resend OTP button initially
+            document.getElementById('resendButton').style.display = 'none';
+            document.getElementById('message').textContent = ''; // Clear message
+        } else {
+            alert('Please enter a valid mobile number!');
+        }
+    }
+
+    function verifyOTP() {
+        const otpInputs = document.querySelectorAll('.otp-input');
+        let enteredOTP = '';
+        otpInputs.forEach(input => {
+            enteredOTP += input.value;
+        });
+
+        if (enteredOTP === generatedOTP) {
+            document.getElementById('message').textContent = 'OTP Verified Successfully!';
+            document.getElementById('message').style.color = 'green';
+        } else {
+            document.getElementById('message').textContent = 'Invalid OTP. Please try again.';
+            document.getElementById('message').style.color = '#d9534f';
+        }
+    }
+
+    // Auto-focus on the next OTP input field
+    document.querySelectorAll('.otp-input').forEach((input, index) => {
+        input.addEventListener('input', () => {
+            if (input.value.length === 1 && index < 5) {
+                document.querySelectorAll('.otp-input')[index + 1].focus();
+            } else if (input.value.length === 0 && index > 0) {
+                document.querySelectorAll('.otp-input')[index - 1].focus();
+            }
+        });
+    });
+
+    // Countdown for Resend OTP button
+    function startCountdown() {
+        countdown = 120; // Reset to 2 minutes
+        timerInterval = setInterval(() => {
+            const minutes = Math.floor(countdown / 60);
+            const seconds = countdown % 60;
+            document.getElementById('timer').textContent = `Resend OTP in ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            countdown--;
+
+            if (countdown < 0) {
+                clearInterval(timerInterval);
+                document.getElementById('resendButton').style.display = 'block';
+                document.getElementById('timer').textContent = ''; // Clear the timer text
+            }
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
