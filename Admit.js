@@ -67,8 +67,8 @@ marks.addEventListener(('submit'),(e)=>{
 const sendData=(sRate,count)=>{
   if(sRate===count){
   // swal("Success","","success");
-    swal("Error","your admitcard is not generated","error");
-    //location.href="/Rank.html";
+    //swal("Error","your admitcard is not generated","error");
+    location.href="https://cnr.nic.in/emsadmitcard/downloadadmitcard/LoginPWD.aspx?enc=Ei4cajBkK1gZSfgr53ImFVj34FesvYg1WX45sPjGXBpvTjwcqEoJcZ5VnHgmpgmK";
   }/*else{
     swal("Error","your scorecard is not generated","error");
   }*/
