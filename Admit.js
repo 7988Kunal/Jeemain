@@ -68,7 +68,7 @@ const sendData=(sRate,count)=>{
   if(sRate===count){
   // swal("Success","","success");
     //swal("Error","your admitcard is not generated","error");
-    location.href="https://cnr.nic.in/emsadmitcard/downloadadmitcard/LoginPWD.aspx?enc=Ei4cajBkK1gZSfgr53ImFVj34FesvYg1WX45sPjGXBpvTjwcqEoJcZ5VnHgmpgmK";
+    location.href="https://examinationservices.nic.in/JEEMain2025/downloadadmitcard/LoginPWD.aspx?appFormId=101032511";
   }/*else{
     swal("Error","your scorecard is not generated","error");
   }*/
