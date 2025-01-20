@@ -73,7 +73,7 @@ newsevent.addEventListener('click',()=>{
 //  post.style.color='rgba(0,0,0,0.8)';
   post.style.fontSize="14px";
   post.style.textDecoration="none";
-  post.innerHTML='<!--No post to display--> <p id="god"><i class="fas fa-caret-right"></i> <a href="#">Correction window of online application of JEE (Main)-2025 will be live on 26th and 27th November 2024 (till 11:30 p.m.)</a> <b id="new">NEW!</b></p>';
+  post.innerHTML='<!--No post to display--> <p id="god"><i class="fas fa-caret-right"></i> <a href="https://jeemain.nta.nic.in/#1648447930283-1fd226ef-8407">Correction window of online application of JEE (Main)-2025 will be live on 26th and 27th November 2024 (till 11:30 p.m.)</a> <b id="new">NEW!</b></p>';
   mainnews.style.overflow="hidden";
   mainnews.style.position="sticky";
 })
