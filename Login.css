@@ -502,7 +502,7 @@ audio{
 #up0{
   position: relative;
   bottom:160px;
-  left:154px;
+  left:168px;
 }
 .dg2{
   position:relative;
@@ -527,7 +527,7 @@ audio{
 }
 #key{
   position:relative;
-  left:175px;
+  left:183px;
   bottom:250px;
   border-color:transparent;
 }
