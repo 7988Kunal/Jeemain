@@ -463,3 +463,49 @@ form {
 audio{
   height:25px;
 }
+
+
+
+
+@media (min-width:768px) and (max-width:1250px){
+.l{
+  height:140px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-left:10px;
+  padding-right:10px;
+}
+#www{
+  display:block;
+}
+}
+@media (max-width:330px){
+#satya{
+  height:65px;
+}
+.l2{
+  font-size:13px;
+}
+}
+@media (min-width:330px) and (max-width:359px){
+.l{
+   display:flex;
+  justify-content:space-between;
+  height:160px;
+ }
+}
+@media (min-width:1251px){
+  .l{
+    height:140px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-left:10px;
+  padding-right:10px;
+}
+#www{
+  display:block;
+ }
+}
+
