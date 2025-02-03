@@ -176,7 +176,7 @@ font-weight:light;
   margin-left: 23px;
 }
 #god {
-  text-align: justify;
+  text-align:left;
 }
 .notice{
   width:86%;
