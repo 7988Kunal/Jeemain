@@ -250,8 +250,7 @@ input{
   width: 46px;
 }
 #lift{
-  position:relative;
-  top:20px ;
+  margin-top:20px ;
 }
 .fa{
   position: absolute;
@@ -262,8 +261,7 @@ input{
   left:22px;
 }
 #joy{
-  position:relative;
-  top:20px;
+   margin-top:20px;
 }
 #candidate{
   display: flex;
@@ -479,6 +477,90 @@ audio{
 #www{
   display:block;
 }
+.x1{
+  position:relative;
+  left:130px;
+  bottom:40px;
+}
+.x2{
+  position:relative;
+  left:445px;
+  bottom:135px;
+}
+.dg0{
+  position: relative;
+  bottom:95px;
+  left:370px;
+}
+.dg1{
+  position:relative;
+  bottom:120px;
+}
+#yet select{
+  width:200px;
+}
+#up0{
+  position: relative;
+  bottom:160px;
+  left:160px;
+}
+.dg2{
+  position:relative;
+  bottom:155px;
+  left:10px;
+}
+#up1{
+  position: relative;
+  bottom:195px;
+  left:160px;
+}
+.fa-eye-slash{
+  position:relative;
+  bottom:245px;
+  left:400px;
+}
+#lift{
+  position:relative;
+  bottom:180px;
+  right:20px;
+  margin-top:0px;
+}
+#key{
+  position:relative;
+  left:170px;
+  bottom:250px;
+  border-color:transparent;
+}
+#fa{
+  position:relative;
+  left:270px;
+  bottom:300px;
+}
+#joy{
+  margin-top:0px;
+  position:relative;
+  bottom:280px;
+}
+#candidate{
+  position:relative;
+  bottom:290px;
+  right:200px;
+}
+#click{
+  position:relative;
+  bottom:300px;
+}
+#forgot1{
+  position:relative;
+  bottom:300px;
+}
+.frog{
+  position:relative;
+  bottom:300px;
+}
+.login{
+  height:700px;
+}
 }
 @media (max-width:330px){
 #satya{
@@ -492,7 +574,7 @@ audio{
 .l{
    display:flex;
   justify-content:space-between;
-  height:160px;
+  height:150px;
  }
 }
 @media (min-width:1251px){
@@ -507,5 +589,146 @@ audio{
 #www{
   display:block;
  }
+ .x1{
+  position:relative;
+  left:150px;
+  bottom:40px;
 }
-
+.x2{
+  position:relative;
+  left:540px;
+  bottom:135px;
+}
+.dg0{
+  position:relative;
+  bottom:95px;
+  left:450px;
+}
+.dg1{
+  position:relative;
+  bottom:120px;
+}
+#up0{
+  position: relative;
+  bottom:160px;
+  left:160px;
+}
+.dg2{
+  position:relative;
+  left:460px;
+  bottom:230px;
+}
+#up1{
+  position: relative;
+  bottom:278px;
+  left:560px;
+}
+.fa-eye-slash{
+  position:relative;
+  bottom:330px;
+  left:790px;
+}
+#lift{
+  position:relative;
+  bottom:250px;
+  right:20px;
+  margin-top:0px;
+}
+#key{
+  position:relative;
+  left:190px;
+  bottom:320px;
+  border-color:transparent;
+}
+#fa{
+  position:relative;
+  left:300px;
+  bottom:370px;
+}
+#joy{
+  margin-top:0px;
+  position:relative;
+  bottom:400px;
+  left:500px;
+}
+#candidate{
+  position:relative;
+  bottom:420px;
+  right:470px;
+}
+#click{
+  position:relative;
+  bottom:430px;
+}
+#forgot1{
+  position:relative;
+  bottom:430px;
+}
+.frog{
+  position:relative;
+  bottom:430px;
+}
+.login{
+  height:580px;
+}
+}
+@media (min-width:990px) and (max-width:1250px){
+  .dg2{
+  position:relative;
+  left:460px;
+  bottom:230px;
+}
+#up1{
+  position: relative;
+  bottom:278px;
+  left:560px;
+}
+.fa-eye-slash{
+  position:relative;
+  bottom:330px;
+  left:790px;
+}
+#lift{
+  position:relative;
+  bottom:250px;
+  right:20px;
+  margin-top:0px;
+}
+#key{
+  position:relative;
+  left:190px;
+  bottom:320px;
+  border-color:transparent;
+}
+#fa{
+  position:relative;
+  left:300px;
+  bottom:370px;
+}
+#joy{
+  margin-top:0px;
+  position:relative;
+  bottom:400px;
+  left:500px;
+}
+#candidate{
+  position:relative;
+  bottom:420px;
+  right:360px;
+}
+#click{
+  position:relative;
+  bottom:430px;
+}
+#forgot1{
+  position:relative;
+  bottom:430px;
+}
+.frog{
+  position:relative;
+  bottom:430px;
+}
+.login{
+  height:580px;
+}
+  }
