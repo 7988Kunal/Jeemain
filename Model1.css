@@ -674,7 +674,13 @@ background-color: #a26106c7;
 .title-font-normal{
   margin-left:18px;
 }
-
+#update-info {
+      color:rgb(7,186,233);
+      font-family: Arial, sans-serif;
+      text-align:center;
+      padding: 10px;
+      background:black;
+}
 
 
 
