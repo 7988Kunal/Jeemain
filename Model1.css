@@ -623,7 +623,7 @@ background-color: #a26106c7;
   margin-top:20px;
   margin-left:20px;
   width:74%;
-  height:100px;
+  /*height:100px;*/
   display: flex;
   flex-direction:column;
   justify-content: center;
