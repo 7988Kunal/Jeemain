@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889141050331538"
      crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
-</head>
+  </head>
   <body class="A">
     <div class="heading">
      <ul id="ww">
@@ -396,37 +394,36 @@
       <br>
       <div id="f1"><i class="fas fa-greater-than"></i><a href="https://www.nta.ac.in/">National Testing Agency</a></div>
     </footer>
-    <div id="update-info">Loading last update date...</div>
-    <p id="copy">Copyright &copy;JEE(MAIN)-2025 All Rights Reserved</p>
-    <h1>Total Visitors: <span id="visitorCount">Loading...</span></h1>
+    <div style="display:flex;justify-content:center;align-items:center;font-size:18px;">
+  <p>Total Visitors:</p>
+  <div id="counter">0</div>
+</div>  
+<script>
+  let visits = localStorage.getItem('visitCount');
 
+  if (!visits) {
+    visits = 1;
+    localStorage.setItem('visitCount', visits);
+  }
+
+  document.getElementById('counter').innerText = visits;
+</script>
   <script>
-    // Your Firebase config (replace with your own)
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
+    // Get current count from localStorage
+    let visits = localStorage.getItem('visitCount');
 
-    // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const database = firebase.database();
+    // If not set, initialize to 0
+    if (!visits) {
+      visits = 1;
+    } else {
+      visits = parseInt(visits) + 1;
+    }
 
-    const visitorRef = database.ref("visitors");
+    // Save updated count
+    localStorage.setItem('visitCount', visits);
 
-    // Increase visitor count
-    visitorRef.transaction((currentCount) => {
-      return (currentCount || 0) + 1;
-    });
-
-    // Display visitor count in real-time
-    visitorRef.on("value", (snapshot) => {
-      document.getElementById("visitorCount").innerText = snapshot.val();
-    });
+    // Display count
+    document.getElementById('counter').innerText = visits;
   </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="Model.js"></script>
