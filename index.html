@@ -394,37 +394,8 @@
       <br>
       <div id="f1"><i class="fas fa-greater-than"></i><a href="https://www.nta.ac.in/">National Testing Agency</a></div>
     </footer>
-    <div style="display:flex;justify-content:center;align-items:center;font-size:18px;">
-  <p>Total Visitors:</p>
-  <div id="counter">0</div>
-</div>  
-<script>
-  let visits = localStorage.getItem('visitCount');
-
-  if (!visits) {
-    visits = 1;
-    localStorage.setItem('visitCount', visits);
-  }
-
-  document.getElementById('counter').innerText = visits;
-</script>
-  <script>
-    // Get current count from localStorage
-    let visits = localStorage.getItem('visitCount');
-
-    // If not set, initialize to 0
-    if (!visits) {
-      visits = 1;
-    } else {
-      visits = parseInt(visits) + 1;
-    }
-
-    // Save updated count
-    localStorage.setItem('visitCount', visits);
-
-    // Display count
-    document.getElementById('counter').innerText = visits;
-  </script>
+    <div id="update-info">Loading last update date...</div>
+    <p id="copy">Copyright &copy; JEE(main)-2025.All Rights Reserved<./p>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="Model.js"></script>
   </body>
