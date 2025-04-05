@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889141050331538"
      crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
 </head>
   <body class="A">
     <div class="heading">
@@ -396,6 +398,36 @@
     </footer>
     <div id="update-info">Loading last update date...</div>
     <p id="copy">Copyright &copy;JEE(MAIN)-2025 All Rights Reserved</p>
+    <h1>Total Visitors: <span id="visitorCount">Loading...</span></h1>
+
+  <script>
+    // Your Firebase config (replace with your own)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    const visitorRef = database.ref("visitors");
+
+    // Increase visitor count
+    visitorRef.transaction((currentCount) => {
+      return (currentCount || 0) + 1;
+    });
+
+    // Display visitor count in real-time
+    visitorRef.on("value", (snapshot) => {
+      document.getElementById("visitorCount").innerText = snapshot.val();
+    });
+  </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="Model.js"></script>
   </body>
