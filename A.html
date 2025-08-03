@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4a00e0;
+      margin-bottom: 20px;
+    }
+
+    input {
+      outline:none;
+      border:2px solid #01616b;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 48%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      gap: 4%;
+    }
+
+    #uploadBtn { background-color: #4CAF50; }
+    #uploadBtn:hover { background-color: #3e8e41; }
+
+    #deleteBtn { background-color: #e53935; }
+    #deleteBtn:hover { background-color: #c62828; }
+
+    .message {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Student Data Manager</h2>
+    <input type="text" id="rollno" placeholder="Roll Number" required />
+    <input type="text" id="name" placeholder="Full Name" />
+    <input type="text" id="regno" placeholder="Registration Number" />
+    <input type="email" id="email" placeholder="Email (optional)" />
+    <input type="tel" id="phone" placeholder="Phone Number (optional)" />
+    
+    <div class="btns">
+      <button id="uploadBtn" onclick="uploadData()">Upload / Update</button>
+      <button id="deleteBtn" onclick="deleteData()">Delete</button>
+    </div>
+    
+    <div id="message" class="message"></div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getDatabase, ref, set, remove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAz-yo7PmFo0eFyzfjQwCP3yiB5GqqpTp0",
+      authDomain: "studentdashboard-681a8.firebaseapp.com",
+      databaseURL: "https://studentdashboard-681a8-default-rtdb.firebaseio.com",
+      projectId: "studentdashboard-681a8",
+      storageBucket: "studentdashboard-681a8.appspot.com",
+      messagingSenderId: "171483691299",
+      appId: "1:171483691299:web:f2bc4e00b696c55b4cf496"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Upload or update data
+    window.uploadData = function () {
+      const rollno = document.getElementById("rollno").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const regno = document.getElementById("regno").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const msg = document.getElementById("message");
+
+      if (!rollno || !name || !regno) {
+        msg.innerHTML = `<div class="error">❌ Roll No, Name & Reg No are required.</div>`;
+        return;
+      }
+
+      const studentRef = ref(db, "students/" + rollno);
+      set(studentRef, {
+        name: name,
+        regno: regno,
+        email: email || "",
+        phone: phone || ""
+      })
+      .then(() => {
+        msg.innerHTML = `<div class="success">✅ Data uploaded/updated successfully.</div>`;
+        clearFields();
+      })
+      .catch((err) => {
+        msg.innerHTML = `<div class="error">❌ Error: ${err.message}</div>`;
+      });
+    };
+
+    // Delete data
+    window.deleteData = function () {
+      const rollno = document.getElementById("rollno").value.trim();
+      const msg = document.getElementById("message");
+
+      if (!rollno) {
+        msg.innerHTML = `<div class="error">❌ Roll Number is required to delete.</div>`;
+        return;
+      }
+
+      const studentRef = ref(db, "students/" + rollno);
+      remove(studentRef)
+        .then(() => {
+          msg.innerHTML = `<div class="success">🗑️ Student data deleted.</div>`;
+          clearFields();
+        })
+        .catch((err) => {
+          msg.innerHTML = `<div class="error">❌ Error: ${err.message}</div>`;
+        });
+    };
+
+    function clearFields() {
+      document.getElementById("rollno").value = "";
+      document.getElementById("name").value = "";
+      document.getElementById("regno").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+    }
+  </script>
+
+</body>
+</html>
